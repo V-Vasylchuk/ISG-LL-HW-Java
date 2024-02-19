@@ -1,5 +1,7 @@
 package lessons.third;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Main {
@@ -35,6 +37,18 @@ public class Main {
         System.out.println("Оновлений перший елемент: " + myList.get(0));
         System.out.print("Оновлений список: ");
         printList(myList);
+
+        System.out.println("----------------------------------------");
+
+        /* Порівняння швидкості вставки у Array/Linked list */
+
+        CompareListSpeed compareListSpeed = new CompareListSpeed();
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        LinkedList<Integer> linkedList = new LinkedList<>();
+
+        compareListSpeed.addingToStart(arrayList, linkedList, 1000);
+        compareListSpeed.addingToCentre(arrayList, linkedList, 1000);
+        compareListSpeed.addingToEnd(arrayList, linkedList, 1000);
     }
 
     public static void printList(MyLinkedList<Integer> myList) {
