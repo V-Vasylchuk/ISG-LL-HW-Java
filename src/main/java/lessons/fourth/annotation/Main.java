@@ -1,6 +1,4 @@
-package lessons.fourth;
-
-import lessons.fourth.annotation.UserData;
+package lessons.fourth.annotation;
 
 public class Main {
     public static void main(String[] args) throws IllegalAccessException {
@@ -12,7 +10,16 @@ public class Main {
         secondUser.setUsername("second_user_name").setAge(18).validateData();
 
         // set invalid data, must throw exception with custom message
-        firstUser.setUsername("Jo").validateData();
-        secondUser.setAge(10).validateData();
+        try{
+            firstUser.setUsername("Jo").validateData();
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try{
+            secondUser.setAge(10).validateData();
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

@@ -50,7 +50,8 @@ public class UserData {
         String stringValue = (String) value;
         int length = stringValue.length();
         if (length < minLength || length > maxLength) {
-            throw new IllegalArgumentException("Invalid string length for field: " + stringValue);
+            throw new IllegalArgumentException("Invalid string length for field: " + stringValue
+                    + " valid length is " + minLength + "-" + maxLength);
         }
     }
 
@@ -60,7 +61,8 @@ public class UserData {
         }
         int intValue = (Integer) value;
         if (intValue < minValue || intValue > maxValue) {
-            throw new IllegalArgumentException("Value out of range for field: " + intValue);
+            throw new IllegalArgumentException("Value out of range("
+                    + minValue + "-" + maxValue + ") for field: " + intValue);
         }
     }
 }
